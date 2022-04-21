@@ -16,10 +16,19 @@
 
       body {
         display: flex;
+        flex-direction: column;
+        gap: 20px;
         justify-content: center;
         align-items: center;
         min-height: 100vh;
         background: #2f363e;
+      }
+
+      #date {
+        font-weight: 500;
+        font-size: 2em;
+        text-transform: uppercase;
+        color: aquamarine;
       }
 
       #time {
@@ -106,15 +115,20 @@
         }
 
         #time .ap {
-          position: relative;
+          /* position: relative; */
           font: 1em;
           /* transform: translateX(-50%); */
+        }
+
+        .search {
+          margin-top: 30px;
         }
       }
     </style>
     <title>Amazing Clock</title>
   </head>
   <body>
+    <div id="date"></div>
     <div id="time">
       <div class="circle" style="--clr: #ff2972">
         <div class="dots hr-dot"></div>
@@ -144,8 +158,16 @@
         <div id="ampm">AM</div>
       </div>
     </div>
+    <div class="search">
+      <div class="gcse-searchbox-only"></div>
+    </div>
+    <script
+      async
+      src="https://cse.google.com/cse.js?cx=343e07dd49906495a"
+    ></script>
     <script>
       setInterval(() => {
+        const dateDiv = document.querySelector("#date");
         const hour = document.querySelector("#hour");
         const minute = document.querySelector("#minute");
         const second = document.querySelector("#second");
@@ -170,6 +192,8 @@
         h = h.toString().padStart(2, "0");
         m = m.toString().padStart(2, "0");
         s = s.toString().padStart(2, "0");
+
+        dateDiv.innerHTML = date.toString().substring(0, 16);
 
         hour.innerHTML = h + "<br><span>Hours</span>";
         minute.innerHTML = m + "<br><span>Minutes</span>";
