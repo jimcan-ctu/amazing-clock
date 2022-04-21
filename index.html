@@ -15,12 +15,18 @@
       }
 
       body {
+        min-height: 100vh;
         display: flex;
+        flex-direction: column;
+      }
+
+      main {
+        display: flex;
+        flex-grow: 1;
         flex-direction: column;
         gap: 20px;
         justify-content: center;
         align-items: center;
-        min-height: 100vh;
         background: #2f363e;
       }
 
@@ -107,6 +113,15 @@
         box-shadow: 0 0 20px var(--clr), 0 0 60px var(--clr);
       }
 
+      footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        background: #292929;
+        color: rgb(133, 133, 133);
+      }
+
       @media screen and (max-width: 600px) {
         #time {
           flex-direction: column;
@@ -128,39 +143,42 @@
     <title>Amazing Clock</title>
   </head>
   <body>
-    <div id="date"></div>
-    <div id="time">
-      <div class="circle" style="--clr: #ff2972">
-        <div class="dots hr-dot"></div>
-        <svg>
-          <circle cx="70" cy="70" r="70"></circle>
-          <circle cx="70" cy="70" r="70" id="hh"></circle>
-        </svg>
-        <div id="hour">00</div>
+    <main>
+      <div id="date"></div>
+      <div id="time">
+        <div class="circle" style="--clr: #ff2972">
+          <div class="dots hr-dot"></div>
+          <svg>
+            <circle cx="70" cy="70" r="70"></circle>
+            <circle cx="70" cy="70" r="70" id="hh"></circle>
+          </svg>
+          <div id="hour">00</div>
+        </div>
+        <div class="circle" style="--clr: #fee800">
+          <div class="dots min-dot"></div>
+          <svg>
+            <circle cx="70" cy="70" r="70"></circle>
+            <circle cx="70" cy="70" r="70" id="mm"></circle>
+          </svg>
+          <div id="minute">00</div>
+        </div>
+        <div class="circle" style="--clr: #04fc43">
+          <div class="dots sec-dot"></div>
+          <svg>
+            <circle cx="70" cy="70" r="70"></circle>
+            <circle cx="70" cy="70" r="70" id="ss"></circle>
+          </svg>
+          <div id="second">00</div>
+        </div>
+        <div class="ap">
+          <div id="ampm">AM</div>
+        </div>
       </div>
-      <div class="circle" style="--clr: #fee800">
-        <div class="dots min-dot"></div>
-        <svg>
-          <circle cx="70" cy="70" r="70"></circle>
-          <circle cx="70" cy="70" r="70" id="mm"></circle>
-        </svg>
-        <div id="minute">00</div>
+      <div class="search">
+        <div class="gcse-searchbox-only"></div>
       </div>
-      <div class="circle" style="--clr: #04fc43">
-        <div class="dots sec-dot"></div>
-        <svg>
-          <circle cx="70" cy="70" r="70"></circle>
-          <circle cx="70" cy="70" r="70" id="ss"></circle>
-        </svg>
-        <div id="second">00</div>
-      </div>
-      <div class="ap">
-        <div id="ampm">AM</div>
-      </div>
-    </div>
-    <div class="search">
-      <div class="gcse-searchbox-only"></div>
-    </div>
+    </main>
+    <footer>Jimboy Cantila | jimcan009@gmail.com</footer>
     <script
       async
       src="https://cse.google.com/cse.js?cx=343e07dd49906495a"
